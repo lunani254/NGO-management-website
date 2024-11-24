@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ESSMaterWebApp.Models.DonationInterest>
+
+@{
+    ViewData["Title"] = "Donation Interests";
+}
+
+<h1 class="page-title">Manage Donations</h1>
+
+<p class="create-new-link">
+    <a class="btn btn-primary" asp-action="Create">Add potential Donor info</a>
+</p>
+
+<!-- Container for repeating items -->
+<div class="donation-list">
+    @foreach (var item in Model)
+    {
+        <div class="donation-card card mb-3">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title">@item.FirstName @item.Surname</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Email Address:</strong> @item.EmailAddress</p>
+                <p><strong>Phone Number:</strong> @item.PhoneNumber</p>
+                <p><strong>Country:</strong> @item.Country</p>
+                <p><strong>Amount Pledged:</strong> @item.AmountPledged</p>
+                <p><strong>Date Submitted:</strong> @item.DateSubmitted</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-secondary btn-sm" asp-action="Edit" asp-route-id="@item.DonationId">Edit</a>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.DonationId">Details</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.DonationId">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Add some styling to the cards -->
+<style>
+    .donation-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .donation-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .card-header {
+        background-color: #4caf50;
+        color: white;
+        font-size: 1.25rem;
+    }
+
+    .card-body p {
+        font-size: 1rem;
+    }
+
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn {
+        padding: 8px 12px;
+    }
+</style>

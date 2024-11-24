@@ -1,0 +1,360 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="landing-page">
+
+    <header class="hero-section">
+        <h1>Welcome to Materfamilia</h1>
+        <p>Making a difference, one step at a time.</p>
+        <a href="#volunteer" class="btn">Join Us as a Volunteer</a>
+    </header>
+
+    @*-------------------------slide show here------------------------ *@
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide">
+            <img src="./Images/donate.jpeg" alt="Slide 1" />
+        </div>
+        <div class="slide">
+            <img src="./Images/donation.jpeg" alt="Slide 1" />
+        </div>
+
+         <div class="slide">
+            <img src="./Images/Founder.jpeg" alt="Slide 1" />
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="./Images/Mentoring.jpeg" alt="Slide 2" />
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="./Images/User story (2).jpeg" alt="Slide 3" />
+        </div>
+    </div>
+    <!---------------------- Founder ------------------------------->
+    <section id="founder" class="section founder-section">
+        <div class="founder-container">
+             <div class="founder-image-container">
+                <img src="~/Images/Founder.jpeg" alt="Founder" class="founder-image" />
+            </div>  
+            <div class="founder-text">
+                <h2 class="founder-title">OUR FOUNDER</h2>
+                <p class="founder-description">
+                    Ann Ligmann's journey is filled with personal victory, ironically, but victory is not achieved without battle.
+                    Distressed females simply give up everything in the battle for social justice and become a burden on the state.
+                </p>
+                <h3 class="vision-title">Vision Statement</h3>
+                <p class="vision-mission">
+                    To empower women to overcome adversity and navigate judicial and policing systems with confidence, ensuring they reclaim
+                    their lives and avoid becoming mere statistics. By transforming personal victory into collective empowerment, we strive to
+                    create a future where every woman can achieve justice and social equity.
+                </p>
+                <h3 class="mission-title">Mission Statement</h3>
+                <p class="vision-mission">
+                    Materfamilia is dedicated to empowering female-headed households in distress by providing tailored legal, financial, and
+                    coaching solutions. It works to restore these households to healthy economic status, reducing the burden on the state and
+                    addressing the social ills affecting women and vulnerable parties. Through our targeted interventions, we support African
+                    women in overcoming the challenges posed by religious, traditional, and legal structures, contributing to national and global
+                    efforts for social justice.
+                </p>
+                <div class="founder-action">
+                    <a href="../Views/Home/Gallery.cshtml" class="btn btn-custom disabled" tabindex="-1" aria-disabled="true" onclick="return false;">Get Involved</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------------------------------ Volunteer Section --------------------------------->
+    <section id="volunteer" class="section volunteer-section">
+        <h2>Become a Volunteer</h2>
+        <p>Join our team and help us create positive change in the world.</p>
+
+        <div class="volunteer-cards-container">
+            <!-- Volunteer Card 1 -->
+            <div class="volunteer-card">
+                <img src="./Images/picture.jpg" alt="Volunteer" />
+                <div class="volunteer-card-content">
+                    <h3>Volunteer Name</h3>
+                    <p>Passionate about creating a better world through meaningful actions.</p>
+                    <button class="btn" onclick="window.location.href='/Home/CommingSoon'">Learn More</button>
+                </div>
+            </div>
+
+
+            <!-- Volunteer Card 2 -->
+            <div class="volunteer-card">
+                <img src="./Images/picture.jpg" alt="Volunteer" />
+                <div class="volunteer-card-content">
+                    <h3>Volunteer Name</h3>
+                    <p>Committed to making positive changes in the community.</p>
+                    <button class="btn" onclick="window.location.href='/Home/CommingSoon'">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Volunteer Card 3 -->
+            <div class="volunteer-card">
+                <img src="./Images/picture.jpg" alt="Volunteer" />
+                <div class="volunteer-card-content">
+                    <h3>Volunteer Name</h3>
+                    <p>Dedicated to helping those in need with compassion and care.</p>
+                    <button class="btn" onclick="window.location.href='/Home/CommingSoon'">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donation" class="section donation-section">
+        <h2>Support Our Cause</h2>
+        <p>Your generosity can change lives. Make a donation today.</p>
+
+        <div class="donation-cards-container">
+            <!-- Donation Card 1 -->
+            <div class="donation-card">
+                <img src="./Images/User story.jpeg" alt="One-Time Donation" />
+                <div class="donation-card-content">
+                    <h3>One-Time Donation</h3>
+                    <p>Make a single contribution to help us fund critical programs and initiatives.</p>
+                    <button class="btn" onclick="window.location.href='/DonationInterests/Create';">Donate Now</button>
+                </div>
+            </div>
+
+            <!-- Donation Card 2 -->
+            <div class="donation-card">
+                <img src="./Images/Mentoring.jpeg" alt="Monthly Giving" />
+                <div class="donation-card-content">
+                    <h3>Monthly Giving</h3>
+                    <p>Provide ongoing support by committing to a monthly donation for sustainable impact.</p>
+                    <button class="btn" onclick="window.location.href='/DonationInterests/Create';">Donate Monthly</button>
+                </div>
+            </div>
+
+            <!-- Donation Card 3 -->
+            <div class="donation-card">
+                <img src="./Images/donation.jpeg" alt="Legacy Giving" />
+                <div class="donation-card-content">
+                    <h3>Legacy Giving</h3>
+                    <p>Leave a lasting legacy by including our cause in your estate planning.</p>
+                    <button class="btn" onclick="window.location.href='/DonationInterests/Create';">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="section projects-section">
+        <h2>Recent Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="./Images/donate.jpeg" alt="Project 1" />
+                <div class="project-card-content">
+                    <h3>Community Library</h3>
+                    <p>Built a community library in rural areas to improve literacy.</p>
+                    <button class="btn" onclick="window.location.href='/Home/CommingSoon'">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="./Images/Mentoring.jpeg" alt="Project 2" />
+                <div class="project-card-content">
+                    <h3>Clean Water Access</h3>
+                    <p>Provided clean water access to over 1,000 families.</p>
+                    <button class="btn" onclick="window.location.href='/Home/CommingSoon'">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="./Images/User story (2).jpeg" alt="Project 3" />
+                <div class="project-card-content">
+                    <h3>Health Camps</h3>
+                    <p>Organized health camps benefiting underserved populations.</p>
+                    <button class="btn" onclick="window.location.href='/Home/CommingSoon'">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   <section id="testimonials" class="section testimonials-section">
+    <h2>What People Say</h2>
+    <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial">
+            <div class="testimonial-img-container">
+                <img src="./Images/Testimonial1.jpg" alt="Jane Doe" class="testimonial-img" />
+            </div>
+            <div class="testimonial-content">
+                    <p>
+                        "My introduction to Materfamilia Social Enterprise and related parties as both beneficiary and volunteer chief financial officer (CFO) is not an overnight success story.  Since the time I reached out to Business Coach Ann Ligman via a leading Christian Radio station that aired her adverts and interviewed her, my journey has been totally changed. What started as a plea for mentoring ended in an over five (5) years journey of selfless investment of time, coaching, mentoring and training and experiential work learning  at no cost by visionary. After completing International Certificate In Bookkeeping (ICB) at a bogus institution I was stucked in retail. The only really exciting and encouraging occurrence in my prosaic existence was the sessions with Ann. I used to go for sessions with her after work or on my mandatory off days, just for an opportunity to apply my Bookkeeping skills.
+                        Today, almost ten (10) years later, I finally
+
+                        pursued tertiary education in the accounting field through a recognised distance learning university. Today still I rely on Ann's advices and guidance to navigate the painful journey of correspondence studies whilst working a very taxing retail job.  Looking back, one thing always stood out about Ann's advices:
+                        "DON'T BEAT YOURSELF UP WHEN YOU MAKE MISTAKES. IT'S THE ONLY WAY TO LEARN, PRACTICALLY. FACE YOUR FEAR OF FAILURE AND YOU ARE BOUND TO BE SUCCESFUL IN THIS JOURNEY."
+                        I benefited from Be Absorbed Incubator COJ Chapter 2018 with Ann as primary project architect and facilitator of all Bookkeeping a d tax modules, amongst others. It inspired  me to finally consider further education and training. What I love about my present studies is that everything I learnt over the years in this relationship becomes more and more relevant on a daily basis.
+                        I frequently express my gratitude and at
+
+                        times wish I had capacity to give back more to Materfamilia Social Enterprise and sister companies but the long hours in retail prevents me from optimizing on the opportunity. Nevertheless, being a beneficiary and volunteer of these programs I pray that investors will recognize the potential of the brand and channel more resources towards it so that more female headed households can benefit from it.
+                        Like my family."
+                    </p>
+                    <span>- Pastor Nyiko Nkuna</span>
+            </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial">
+            <div class="testimonial-img-container">
+                <img src="./Images/Testimonial2.jpg" alt="Local Leader" class="testimonial-img" />
+            </div>
+            <div class="testimonial-content">
+                    <p>
+                        "The day I met the visionary of Materfamilia Social Enterprise, I instinctively knew it is a remarkable day in my life. I immediately informed her that henceforth we will be inseparable and concur many demons together. Little did I realise the prophetic nature of that declaration. What I learnt in this journey is to recognise all my gifts snd turn them into value adding solutions as entrepreneur solving real problems in the communities I serve. Every single day is a
+
+                        learning experience.  Ann is a very hard business coach but with a lot of empathy born from a deep understanding of how past mistakes, family and extended relationships and lack of education can cripple the most gifted person. Ann taught me over a period of thirteen months more then I learnt in four (4) decades of life.  Most importantly she taught me my obsession with order and hygiene don't necessarily need to be a drawback factor on this journey but rather a great value add if channeled into profitable business activities. Hence my business tag line is "OCD precision".  I am no longer shamed by my past and by my present. In fact, I am so focused on mastering this entrepreneurial journey and excelling in business to create family wealth legacy, that I have little time to procrastinate about past failures and lacks. Since I started this journey and invested in the Be Absorbed Incubator Stellenbosch Chapter programs within the Materfamilia
+
+                        family, I have grown from strength to strength even spiritually and professionally and evolved as a parent that want to be an active participant in my girls' education and sports career. I would not have capacity to pursue new and exciting wealth creation goals without the patient yet uncompromisingly strict guidance of my business coach.
+
+                        Today I find utter enjoyment to exercise my gifts in sports, spiritual matter and Entrepreneurship as well as family life enhance through particularly the divorce coaching modules I completed and my ex wife and our children directly benefit from as well.
+
+                        I learnt that it is never too late to pursue new goals and that I am not top old to learn and acquire new skills and knowledge.
+                        "
+                    </p>
+                    <span>- Thlokomelo Morai </span>
+            </div>
+        </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial">
+                <div class="testimonial-img-container">
+                    <img src="./Images/Testimonial3.jpg" alt="Local Leader" class="testimonial-img" />
+                </div>
+                <div class="testimonial-content">
+                    <p>
+                        "In October 2023 started my virtual divorce coaching financial analysis journey with visionary and key person Ann Ligman under the DivorCFAnn umbrella. I was referred by a member of our church in City of Joburg municipality who met Ann in divorce coaching sessions hosted by our church.
+                        During this journey I was equipped with so much skills and knowledge on how to navigate justice, social, health and professional systems, it left me astounded. Twelve (12)  months  down the line my fait accompli matter was handed over to a qualified advocate with a complete pack of supporting evidence patiently solicited under Ann's guidance and packaged in a manner to facilitate both the preciding magistrate and the legal counsel as well as empower the opposing counsel and my ex husband with the relevant understanding of exactly how crippling my divorce settlements nine (9) years ago was to the holistic health and
+
+                        wellness and wealth of my three (3) special needs children and I. My former husband simply lacked the willingness and the emotional capacity to understand exactly how much damage was done by his total reliance on his historic legal counsel and blood relative.
+                        Looking back I am eternally grateful for the time and resources and hospitality and kindness the organization channeled in my direction. I have learnt to value myself, my skills and my gifts and to exercise it unapologetically in the interest of my family's well-being. I had to work on areas where I had my own biases and prejudice affirmed by systems and had to panel beat my mind daily to adjust to the realities that I am facing. During this journey I managed to get back into a professional teaching job but also established my personal brand as a virtual teacher.
+                        As a white female with a background of privilege and favor, it was an eye opening journey and today I can confidently say I have gained more knowledge about my responsibilities as primary custodian and that of my former husband. I learnt to let go of my paranoia pertaining my children's ability to find for themselves and I am eternally grateful and relieved to attest to their independence both as students or learners and as young adults navigating life bravely without being tied to mommy's apron.
+
+                        We are an empowered family today due to the benefits of this association."
+                    </p>
+                    <span>- Gill - STEM</span>
+                </div>
+            </div>
+    </div>
+</section>
+
+
+    <section id="contact" class="section contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Hide all slides
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 } // Reset to the first slide if at the end
+            slides[slideIndex - 1].style.display = "block"; // Show the current slide
+            setTimeout(showSlides, 5000); // Change slide every 5 seconds
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showSlides(); // Wait until the document is fully loaded to start the slideshow
+        });
+    </script>
+
+    @*=============================== Footer ================================*@
+    <footer class="footer bg-dark text-white pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>About Materfamilia</h5>
+                    <p>Materfamilia is dedicated to supporting and empowering families through tailored services, education, and outreach programs.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="ContactUs" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Gallery" class="text-white text-decoration-none">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <div class="social-item">
+                            <a href="https://m.facebook.com/integrityqueen/" target="_blank" class="social-link">
+                                <lord-icon src="https://cdn.lordicon.com/dqxvvqzi.json"
+                                           trigger="hover"
+                                           colors="primary:#1b74e4,secondary:#f4f4f4"
+                                           style="width:50px;height:50px">
+                                </lord-icon>
+                                <p class="social-name">Facebook</p>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://x.com/IntegriteGRC" target="_blank" class="social-link">
+                                <lord-icon src="https://cdn.lordicon.com/bjdrneur.json"
+                                           trigger="hover"
+                                           style="width:50px;height:50px">
+                                </lord-icon>
+                                <p class="social-name">Twitter</p>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://www.instagram.com/integritegrc/?hl=en" target="_blank" class="social-link">
+                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                <lord-icon src="https://cdn.lordicon.com/ctlpkznr.json"
+                                           trigger="hover"
+                                           style="width:50px;height:50px">
+                                </lord-icon>
+                                <p class="social-name">Instagram</p>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://za.linkedin.com/in/annligman" target="_blank" class="social-link">
+                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                <lord-icon src="https://cdn.lordicon.com/nwqudhei.json"
+                                           trigger="hover"
+                                           style="width:50px;height:50px">
+                                </lord-icon>
+                                <p class="social-name">LinkedIn</p>
+                            </a>
+                         </div>
+                         <div class="social-item">
+                            <a href="https://whatsapp.com/channel/0029VajysNX0Qeabv9ChVk0G" target="_blank" class="social-link">
+                                <lord-icon src="https://cdn.lordicon.com/zpxybbhl.json"
+                                           trigger="hover"
+                                           colors="primary:#25d366,secondary:#f4f4f4"
+                                           style="width:50px;height:50px">
+                                </lord-icon>
+                                <p class="social-name">WhatsApp</p>
+                            </a>
+                         </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center mt-4">
+                    <p>&copy; 2024 Materfamilia. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ESSMaterWebApp.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h1 class="page-title">Manage Employees</h1>
+
+<p class="create-new-link">
+    <!-- Redirect to RegisterEmployee Page -->
+    <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/RegisterEmployee">Add New Employee</a>  
+</p>
+
+<div class="employee-container">
+    @foreach (var employee in Model)
+    {
+        <div class="employee-card">
+            <h3 class="employee-name">@employee.FirstName @employee.Surname</h3>
+            <p><strong>Email:</strong> @employee.EmailAddress</p>
+            <p><strong>Phone:</strong> @employee.PhoneNumber</p>
+            <p><strong>Role:</strong> @employee.Role</p>
+            <p><strong>Job Description:</strong> @employee.JobDescription</p>
+
+            <div class="employee-actions">
+                <a class="btn btn-secondary btn-sm" asp-action="Edit" asp-route-id="@employee.EmployeeId">Edit</a>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@employee.EmployeeId">Details</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@employee.EmployeeId">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+
+@section Styles {
+    <style>
+        /* General Page Styling */
+        .page-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .create-new-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Employee Container Styling */
+        .employee-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .employee-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .employee-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+        .employee-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .employee-card p {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .employee-actions {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .employee-actions .btn {
+                font-size: 0.875rem;
+            }
+
+            .employee-actions .btn-sm {
+                padding: 5px 10px;
+            }
+    </style>
+}

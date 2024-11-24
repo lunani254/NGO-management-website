@@ -1,0 +1,2008 @@
+﻿
+/* General Reset and Font Styling */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    line-height: 1.6;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Apply Global Background and Text Colors */
+body {
+    color: #eaeaea; /* Light text for contrast */
+    background-color: #2b2b2b; /* Dark background */
+}
+
+/*--------------------Register and sign up page--------------------*/
+    /* Background Colors for Specific Pages */
+    body.login-page {
+        background: linear-gradient(135deg, #ff9f43, #ff6f61);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    /* General Styling */
+    body.register-page {
+        background: linear-gradient(135deg, #ff9f43, #ff6f61);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    body.default-page {
+        background: linear-gradient(#37474F, #37474F, #37474F);
+    }
+
+/* Container for Login */
+.login-body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--secondary-color);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* Heading in Login Form */
+    .login-container h2 {
+        margin-bottom: 16px;
+        color: #ffffff;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .login-container hr {
+        width: 100%;
+        border-color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+    }
+
+.register-container {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--secondary-color);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* Heading */
+    .register-container h2 {
+        margin-bottom: 16px;
+        color: #ffffff;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .register-container hr {
+        width: 100%;
+        border-color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+    }
+
+/* Input Field Styling */
+.form-floating {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+    .form-floating .form-control {
+        background: rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        padding: 10px 12px;
+        width: 100%;
+    }
+
+        .form-floating .form-control:focus {
+            background: rgba(255, 255, 255, 0.5);
+            outline: none;
+            border-color: #ff9f43;
+            box-shadow: 0px 0px 8px rgba(255, 159, 67, 0.5);
+            color: #fff;
+        }
+
+    .form-floating label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.85rem;
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-floating .form-control:focus + label,
+    .form-floating .form-control:not(:placeholder-shown) + label {
+        font-size: 0.75rem;
+        top: -12px;
+        color: #ff9f43;
+    }
+
+/* Validation Styling */
+.text-danger {
+    font-size: 0.85rem;
+    color: #ff6f61;
+}
+
+/* Button Styling */
+button#w-registerSubmit {
+    background: linear-gradient(90deg, #ff9f43, #ff6f61);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    button#w-registerSubmit:hover {
+        background: linear-gradient(90deg, #ff6f61, #ff9f43);
+        box-shadow: 0px 4px 10px rgba(255, 159, 67, 0.6);
+        transform: scale(1.05);
+    }
+
+/* Dropdown Styling */
+select.form-control {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+}
+
+    select.form-control:focus {
+        background: rgba(255, 255, 255, 0.5);
+        outline: none;
+        border-color: #ff9f43;
+        box-shadow: 0px 0px 8px rgba(255, 159, 67, 0.5);
+        color: #fff;
+    }
+
+/* Input Field Styling */
+.form-control {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+    .form-control:focus {
+        background: rgba(255, 255, 255, 0.5);
+        outline: none;
+        border-color: #ff9f43;
+        box-shadow: 0px 0px 8px rgba(255, 159, 67, 0.5);
+        color: #fff;
+    }
+
+/* Button Styling */
+button.btn {
+    background: linear-gradient(90deg, #ff9f43, #ff6f61);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    button.btn:hover {
+        background: linear-gradient(90deg, #ff6f61, #ff9f43);
+        box-shadow: 0px 4px 10px rgba(255, 159, 67, 0.6);
+        transform: scale(1.05);
+    }
+
+    button.btn:focus {
+        outline: 2px dashed #ff9f43;
+    }
+
+
+/* Link Styling */
+a {
+    color: #ff9f43;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Checkbox Styling */
+.checkbox label {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.checkbox input {
+    margin-right: 8px;
+}
+
+/* Validation Error Styling */
+.text-danger {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+/*----------------Navigation bar-------------------------*/
+/* Navigation Bar Styling */
+.navbar {
+    background: linear-gradient(90deg, #ff9f43, #ff6f61); 
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 0.5rem 1.5rem; /* Better padding */
+}
+
+.navbar-logo {
+    height: 120px; /* Adjusted size for a more compact navbar */
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Branding Text */
+.navbar-brand {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px; /* Subtle letter spacing for style */
+    transition: color 0.3s ease;
+}
+
+    .navbar-brand:hover {
+        color: #ffe8d6; /* Subtle hover effect for brand text */
+    }
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    color: #ffffff;
+    padding: 10px 15px;
+    margin: 0 10px; /* Spacing between links */
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    background-color: #ff7f50; /* Match navbar gradient */
+    border: none;
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    font-size: 0.9rem;
+    color: #1a1817;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+    .dropdown-item:hover {
+        background-color: #782c10; /* Orange hover effect */
+        color: white;
+    }
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover background */
+    color: #1a1817;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link.active {
+    color: #1a1817;
+    font-weight: bold;
+}
+
+/* Navbar Toggler (Hamburger Icon) */
+.navbar-toggler {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.navbar-toggler-icon {
+    color: #ff6f61;
+    font-size: 1.5rem;
+}
+
+/*===================== Footer Styling =========================*/
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Make the main content grow to fill available space */
+main {
+    flex: 1;
+}
+
+    .footer h5 {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .footer a {
+        color: #ffcc00; /* Yellow links */
+        transition: color 0.3s ease;
+    }
+
+        .footer a:hover {
+            color: #ff7f50; /* Orange hover effect */
+            text-decoration: none;
+        }
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .social-icons a:hover {
+        transform: scale(1.2);
+    }
+
+.footer .social-icons lord-icon {
+    cursor: pointer;
+}
+
+.footer .social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+/* Button Styling */
+.navbar .btn {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    .navbar .btn:hover {
+        background-color: #ff9f43;
+        transform: scale(1.05);
+    }
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .navbar-logo {
+        height: 40px; /* Smaller logo for mobile */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+        .navbar-nav .nav-link:hover {
+            background-color: transparent; /* Remove hover background on mobile */
+        }
+}
+
+@media (max-width: 576px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+    .register-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+        .register-container h2 {
+            font-size: 1.5rem;
+        }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/*--------------------------- Home page -------------------------*/
+.landing-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+    .section h2 {
+        color: #ff9f43;
+    }
+
+.hero-section {
+    background: linear-gradient(135deg, #1c1c1c, #333333); /* Darker gradient */
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+    .hero-section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #ff9f43; /* Highlighted heading */
+    }
+
+    .hero-section .btn {
+        background: #fff;
+        color: #ff6f61;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+
+        .hero-section .btn:hover {
+            background: #ff6f61;
+            color: #fff;
+        }
+/*=========================== Volunteer Section Styling ============================== */
+.volunteer-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+    .volunteer-section h2 {
+        font-size: 2rem;
+        color: #ff9f43;
+        margin-bottom: 10px;
+    }
+
+    .volunteer-section p {
+        font-size: 1.1rem;
+        color: #eaeaea;
+        margin-bottom: 30px;
+    }
+
+/* Volunteer Cards Container */
+.volunteer-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 20px;
+    justify-content: center; /* Center-align cards horizontally */
+}
+
+/* Volunteer Card Styling */
+.volunteer-card {
+    display: flex;
+    align-items: flex-start;
+    background: #444444; /* Slightly lighter than the background */
+    border: 1px solid #555555;
+    color: #eaeaea;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .volunteer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Image Styling */
+    .volunteer-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 8px; /* Slight rounding for a clean look */
+        object-fit: cover; /* Ensure the image is properly cropped */
+    }
+
+/* Card Content */
+.volunteer-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 10px;
+}
+
+    .volunteer-card-content h3 {
+        color: #ff9f43; /* Accent heading */
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+    .volunteer-card-content p {
+        font-size: 1rem;
+        margin: 0;
+        color: #cccccc;
+    }
+
+    .volunteer-card-content .btn {
+        background: #ff6f61;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .volunteer-card-content .btn:hover {
+            background: #ff9f43;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .volunteer-card {
+        flex-direction: column; /* Stack card content vertically on smaller screens */
+        align-items: center;
+        text-align: center;
+    }
+
+        .volunteer-card img {
+            width: 100%;
+            height: auto;
+        }
+
+    .volunteer-card-content {
+        text-align: center;
+    }
+}
+
+
+/*--------------------------- Donation section -------------------------*/
+/* Donation Section Styling */
+.donation-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #333333; /* Mid-dark tone */
+    color: #eaeaea;
+}
+
+    .donation-section h2 {
+        font-size: 2rem;
+        color: #ff9f43;
+        margin-bottom: 10px;
+    }
+
+    .donation-section p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #cccccc;
+    }
+
+/* Donation Cards Container */
+.donation-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Donation Card Styling */
+.donation-card {
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically */
+    align-items: center;
+    background: #444444; /* Slightly lighter than the background */
+    border: 1px solid #555555;
+    color: #eaeaea;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .donation-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Donation Card Image */
+    .donation-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover; /* Maintain aspect ratio and crop excess */
+        border-radius: 8px 8px 0 0; /* Rounded corners for top only */
+    }
+
+/* Donation Card Content */
+.donation-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+    .donation-card-content h3 {
+        font-size: 1.5rem;
+        color: #ff9f43; /* Accent heading */
+        margin: 0;
+    }
+
+    .donation-card-content p {
+        font-size: 1rem;
+        margin: 0;
+        color: #cccccc;
+    }
+
+    .donation-card-content .btn {
+        background: #ff6f61;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .donation-card-content .btn:hover {
+            background: #ff9f43;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .donation-card {
+        flex: 1 1 100%; /* Allow cards to take full width on smaller screens */
+    }
+}
+
+/*================================= Project section==========================*/
+/* Projects Section Styling */
+.projects-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #333333; /* Mid-dark tone */
+    color: #eaeaea;
+}
+
+    .projects-section h2 {
+        font-size: 2rem;
+        color: #ff9f43;
+        margin-bottom: 10px;
+    }
+
+/* Projects Grid Container */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Project Card Styling */
+.project-card {
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically */
+    align-items: center;
+    background: #444444; /* Slightly lighter than the background */
+    border: 1px solid #555555;
+    color: #eaeaea;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Project Card Image */
+    .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover; /* Maintain aspect ratio and crop excess */
+        border-radius: 8px 8px 0 0; /* Rounded corners for top only */
+    }
+
+/* Project Card Content */
+.project-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+    .project-card-content h3 {
+        font-size: 1.5rem;
+        color: #ff9f43; /* Accent heading */
+        margin: 0;
+    }
+
+    .project-card-content p {
+        font-size: 1rem;
+        margin: 0;
+        color: #cccccc;
+    }
+
+    .project-card-content .btn {
+        background: #ff6f61;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .project-card-content .btn:hover {
+            background: #ff9f43;
+        }
+
+
+/*=========================== Testimonial section =======================*/
+/* Testimonials Section Styling */
+.testimonials-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #444444; /* Dark background for differentiation */
+    color: #eaeaea;
+}
+
+    .testimonials-section h2 {
+        font-size: 2rem;
+        color: #ff9f43;
+        margin-bottom: 30px;
+    }
+
+/* Testimonials Grid Container */
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Testimonial Card Styling */
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #555555; /* Lighter background for cards */
+    color: #eaeaea;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    flex: 1 1 300px; /* Make cards flexible */
+}
+
+    .testimonial:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+/* Testimonial Image Styling */
+.testimonial-img-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 15px;
+}
+
+.testimonial-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits properly */
+}
+
+/* Testimonial Content */
+.testimonial-content p {
+    font-size: 1rem;
+    margin: 0;
+    font-style: italic;
+    color: #cccccc;
+}
+
+.testimonial-content span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff9f43; /* Accent color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonial {
+        flex: 1 1 100%; /* Stack the cards on smaller screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 100%; /* Allow cards to take full width on smaller screens */
+    }
+}
+
+
+ .founder-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+ }
+
+.founder-section {
+    padding: 60px 20px;
+    background: #1c1c1c; /* Dark background */
+    overflow: hidden;
+}
+
+.founder-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-image-container {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .founder-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+.founder-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.founder-text {
+    flex: 1 1 55%;
+    text-align: left;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.founder-title {
+    font-size: 2rem;
+    color: #ff9f43; /* Accent color */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.founder-description,
+.vision-mission {
+    color: #cccccc; /* Softer text color */
+}
+
+.founder-action .btn-custom {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+    .founder-action .btn-custom:hover {
+        background: #0056b3;
+        transform: scale(1.1);
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.vision-title,
+.mission-title {
+    font-size: 1.5rem;
+    color: #444;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+/* Projects Section */
+.projects-grid .project-card {
+    background: #444444; /* Slightly lighter than the background */
+    border: 1px solid #555555;
+    color: #eaeaea;
+}
+
+.project-card h3 {
+    color: #ff9f43; /* Accent heading */
+}
+
+.testimonials-grid .testimonial {
+    background: #444444;
+    border: 1px solid #555555;
+    color: #eaeaea;
+}
+/* Contact Section */
+.contact-section {
+    background: #2b2b2b; /* Match global dark background */
+    color: #eaeaea;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        background: #ff6f61;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .contact-form button:hover {
+            background: #ff9f43;
+        }
+
+/*=========================== Contact page =====================*/
+/* Contact Section Styling */
+.contact-us-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f9f9f9;
+    color: #333;
+}
+
+    .contact-us-section h1 {
+        font-size: 2.5rem;
+        color: #ff9f43;
+        margin-bottom: 20px;
+    }
+
+    .contact-us-section p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+    .form-group label {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+        }
+
+button.btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button.btn:hover {
+        background-color: #ff9f43;
+    }
+
+/* Contact Details Styling */
+.contact-details {
+    margin-top: 40px;
+}
+
+    .contact-details h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-details ul {
+        list-style-type: none;
+        padding: 0;
+        color: #666;
+    }
+
+        .contact-details ul li {
+            margin-bottom: 10px;
+        }
+
+/* Social Media Links */
+.social-media {
+    margin-top: 40px;
+}
+
+    .social-media h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .social-media ul {
+        list-style-type: none;
+        padding: 0;
+        color: #007bff;
+    }
+
+        .social-media ul li {
+            margin-bottom: 10px;
+        }
+
+            .social-media ul li a {
+                text-decoration: none;
+                color: #007bff;
+            }
+
+                .social-media ul li a:hover {
+                    text-decoration: underline;
+                }
+
+/*============================ Gallery ===========================*/
+/* Gallery Section Styling */
+.gallery-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f9f9f9;
+    color: #333;
+}
+
+    .gallery-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #ff9f43;
+    }
+
+    .gallery-section p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+/* Gallery Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a responsive grid */
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+    /* Hover Effect on Image */
+    .gallery-img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+        opacity: 0.8; /* Slight darkening */
+    }
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+    .lightbox-modal .close {
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        cursor: pointer;
+    }
+
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    overflow: hidden;
+}
+
+.lightbox-slide {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-section h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-item {
+        margin: 0 auto;
+    }
+}
+
+
+/*=========================== Slide show ===========================*/
+/* Slideshow Styling */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 400px; /* Set a height for the slideshow */
+    margin-top: 20px;
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.slide {
+    display: none; /* Hide slides by default */
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Make images cover the container */
+        border-radius: 8px; /* Optional: rounded corners */
+    }
+
+/* Fade animation for transitions */
+.fade {
+    animation: fade 5s infinite;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*=========================== Appointemnet index ===========================*/
+/* Basic styling for the page title */
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for the link to create new appointment */
+.create-new-link a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+    .create-new-link a:hover {
+        background-color: #0056b3;
+    }
+
+/* Styling for the table */
+.table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+    }
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.thead-dark {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Styling for action buttons */
+.btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    margin-right: 5px;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+    margin-right: 5px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-sm {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+}
+
+/* Button hover states */
+.btn:hover {
+    opacity: 0.9;
+}
+
+/*========================== Appointment create ======================*/
+/* General Page Styling */
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Container */
+.appointment-form {
+    background: linear-gradient(135deg, #ff7f50, #ffcc00); /* Orange to yellow gradient */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label.control-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff; /* White labels for better contrast */
+}
+
+/* Input Fields */
+input.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #fff; /* White border for inputs */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Slight transparent background */
+    color: #fff; /* White text inside the input */
+}
+
+    input.form-control:focus {
+        border-color: #ffcc00; /* Focus border color matching the gradient */
+        outline: none;
+        box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* Yellow glow on focus */
+    }
+
+/* Validation Error Styling */
+.text-danger {
+    font-size: 0.875rem;
+    color: #e74c3c; /* Red for error messages */
+}
+
+/* Submit Button */
+input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #ffcc00; /* Yellow for submit button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+    input[type="submit"]:hover {
+        background-color: #ff7f50; /* Orange on hover */
+    }
+
+/* Go Back Button (Admin Only) */
+.go-back-link a {
+    font-size: 1rem;
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+    .go-back-link a:hover {
+        background-color: #5a6268;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .appointment-form {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+/*================================== Donation =====================================*/
+/* Style for the form container */
+.donation-form {
+    background: linear-gradient(135deg, #ff7f50, #ffcc00); /* Orange to yellow gradient */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    margin-top: 20px;
+}
+
+    /* Input fields and form controls */
+    .donation-form .form-control {
+        background-color: rgba(255, 255, 255, 0.2); /* Transparent white for inputs */
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        .donation-form .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: #ffcc00; /* Yellow border when focused */
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* Yellow glow */
+            color: #fff;
+        }
+
+    /* Form labels */
+    .donation-form .control-label {
+        font-size: 1rem;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* Validation error messages */
+    .donation-form .text-danger {
+        font-size: 0.875rem;
+        color: #ff6f61; /* Soft red for error messages */
+    }
+
+    /* Donation type section styling */
+    .donation-form .form-check-label {
+        color: #fff;
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    /* Submit button styling */
+    .donation-form .btn-primary {
+        background-color: #ffcc00; /* Yellow button to match gradient */
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+        .donation-form .btn-primary:hover {
+            background-color: #ff7f50; /* Orange hover effect */
+            transform: scale(1.05);
+        }
+
+/* Go back link button */
+.go-back-link .btn-secondary {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+    .go-back-link .btn-secondary:hover {
+        background-color: #e05f57;
+        transform: scale(1.05);
+    }
+
+/* Additional styling for the "Create" heading */
+.page-title {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/*================================ Media Content ================================*/
+/* General Page Styling */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Container */
+.media-content-form {
+    background: linear-gradient(135deg, #ff7f50, #ffcc00); /* Gradient background from orange to yellow */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label.control-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff; /* White labels */
+}
+
+/* Input Fields */
+input.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #fff; /* White border */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Slight transparent background */
+    color: #fff; /* White text */
+}
+
+    input.form-control:focus {
+        border-color: #ffcc00; /* Focused border color */
+        outline: none;
+        box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* Glowing effect */
+    }
+
+/* Validation Error Styling */
+.text-danger {
+    font-size: 0.875rem;
+    color: #e74c3c; /* Red for errors */
+}
+
+/* Submit Button */
+input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #ffcc00; /* Yellow button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+    input[type="submit"]:hover {
+        background-color: #ff7f50; /* Orange on hover */
+    }
+
+/* Go Back Button */
+.go-back-link a {
+    font-size: 1rem;
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+    .go-back-link a:hover {
+        background-color: #5a6268;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .media-content-form {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+/*========================== media*/
+.media-content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.media-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .media-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.media-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.media-description {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.media-type,
+.media-url {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.media-actions .btn {
+    margin: 5px;
+}
+
+.media-actions .btn-sm {
+    font-size: 0.875rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .media-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/*======================= Social link =====================*/
+.social-media {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+    .social-link:hover {
+        color: #007bff;
+    }
+
+lord-icon {
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover lord-icon {
+    transform: scale(1.2); /* Slight zoom-in effect on hover */
+}
+
+/*============================== Employee =======================*/
+/* Form Container */
+.employee-form {
+    background: linear-gradient(135deg, #ff7f50, #ffcc00); /* Gradient from orange to yellow */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label.control-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff; /* White labels */
+}
+
+/* Input Fields */
+input.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #fff; /* White border */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Slight transparent background */
+    color: #fff; /* White text */
+}
+
+    input.form-control:focus {
+        border-color: #ffcc00; /* Yellow when focused */
+        outline: none;
+        box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* Glowing effect */
+    }
+
+/* Validation Error Styling */
+.text-danger {
+    font-size: 0.875rem;
+    color: #ff6f61; /* Soft red for errors */
+}
+
+/* Submit Button */
+input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #ffcc00; /* Yellow button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+    input[type="submit"]:hover {
+        background-color: #ff7f50; /* Orange on hover */
+        transform: scale(1.05);
+    }
+
+/* Go Back Button */
+.go-back-link .btn-secondary {
+    font-size: 1rem;
+    background-color: #ff6f61; /* Soft red */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+    .go-back-link .btn-secondary:hover {
+        background-color: #e05f57; /* Darker red on hover */
+        transform: scale(1.05);
+    }
+
+/* Page Title */
+.page-title {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .employee-form {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+/*========================= About page ========================*/
+/* General Styling */
+.about-page-section {
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+    background-color: #545151;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-section, .mission-section, .vision-section, .founder-section, .values-section {
+    margin-bottom: 40px;
+}
+
+/* Founder Section */
+.founder-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Aboutfounder-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.founder-content p {
+    flex: 1;
+}
+
+/* Values Section */
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+    .values-list li {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+        .values-list li::before {
+            content: '✔';
+            color: #ff7f50;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .founder-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .Aboutfounder-image {
+        margin-bottom: 20px;
+    }
+}
+
+/*=================== slide ======================*/
+/* Slide */
+.slide {
+    display: none; /* Hide slides by default */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height of the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+    /* Slide Image */
+    .slide img {
+        width: 100%; /* Scale image to fit the width */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image fills the container */
+    }

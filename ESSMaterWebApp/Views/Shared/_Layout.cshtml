@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MaterFamilia</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ESSMaterWebApp.styles.css" asp-append-version="true" />
+    @*//--------------------My css file----------------------*@
+    <link rel="stylesheet" href="~/css/MyStyle.css" />
+    @RenderSection("Styles", required: false)
+    
+</head>
+<body>
+    @* ------------------------- Bot script -----------------------------  *@
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2024/11/21/23/20241121231813-7V4BRNW4.js"></script>
+    <div class="page-container">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="@Url.Content("~/Images/logoPng.png")" alt="MaterFamilia Logo" class="navbar-logo" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @*===========================================================================================*@
+                        @*--------- Home Page [Everyone can see] *@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        @*================= Drop down list ==============*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Learn More
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="About">About Us</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a></li>
+                            </ul>
+                        </li>
+                       
+                        @*
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li> *@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Gallery">Gallery</a>
+                        </li>
+
+                        @*============== Display only when user is authenticated *@
+                        @if (User.Identity.IsAuthenticated)
+
+                        {
+
+                            @*--------- Display only for -+- Admin -+- *@
+                            @if (User.IsInRole("Admin"))
+
+                            {
+                                @* Admin can manage Employees *@
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Employees" asp-action="Index">Employees</a>
+                                </li>
+
+                                @* Admin can manage Appointments *@
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Appointments" asp-action="Index" asp-action="Details" asp-route-id="1">Appointments</a>
+                                </li>
+
+                                @* Admin can manage Donations *@
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="DonationInterests" asp-action="Index" asp-action="Details" asp-route-id="1">Potential Donors</a>
+                                </li>
+
+                                @* Admin can manage Media on the Website *@
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="MediaContents" asp-action="Index" asp-action="Details" asp-route-id="1">Media</a>
+                                </li>
+
+                                @* Admin can manage Questionnaires filled by CLient *@
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Questionnaires" asp-action="Index" asp-action="Details" asp-route-id="1">Questionnaires</a>
+                                </li> *@
+
+                                @* Admin can manage Questions in the Questionnaire filled by CLient *@
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Questions" asp-action="Index" asp-action="Details" asp-route-id="1">Insert Questions</a>
+                                </li> *@
+
+                                @* Admin can manage Responses in the Questionnaire filled by CLient *@
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Responses" asp-action="Index" asp-action="Details" asp-route-id="1">Responses</a>
+                                </li> *@
+
+                                @* Admin can manage Diagnoses *@
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Diagnoses" asp-action="Index" asp-action="Details" asp-route-id="1">Diagnoses</a>
+                                </li> *@
+                            }
+
+                            @*--------- Display only for  -+- Client -+- *@
+                            @if (User.IsInRole("Client"))
+
+                            {
+                                @* Client can book an appointment*@
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Appointments" asp-action="Create" asp-action="Create" asp-route-id="1">Book Appointment</a>
+                                </li>
+
+                                @* Client can show interest in donating*@
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="DonationInterests" asp-action="Create" asp-action="Create" asp-route-id="1">Become a Donor</a>
+                                </li>
+
+                                @* Client can view Media [Feature for next Milestones]*@
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="MediaContents" asp-action="Details" asp-action="Details" asp-route-id="1"> Media </a>
+                                </li> *@
+
+                                @* Client can fill Questionnaire  [Feature for next Milestones]*@ 
+                                @* <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Responses" asp-action="Create" asp-action="Create" asp-route-id="1"> Questionnaire </a>
+                                </li> *@
+                            }
+
+                            @*--------- Display only for -+-  Employee -+- *@
+                            @if (User.IsInRole("Employee"))
+                            {
+                                @*----- Employee  *@
+
+                            }
+                        }
+
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>       
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+ </div>   
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿@{
+    ViewData["Title"] = "Gallery";
+}
+
+<section id="gallery" class="gallery-section">
+    <h1>Our Gallery</h1>
+    <p>Explore moments from our events, projects, and initiatives that highlight our mission and impact.</p>
+
+    <div class="gallery-grid">
+       
+        <div class="gallery-item">
+            <img src="/Images/donate.jpeg" alt="Gallery Image 2" class="gallery-img" onclick="openLightbox();currentSlide(2)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/donation.jpeg" alt="Gallery Image 3" class="gallery-img" onclick="openLightbox();currentSlide(3)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/Mentoring.jpeg" alt="Gallery Image 4" class="gallery-img" onclick="openLightbox();currentSlide(4)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/User story (2).jpeg" alt="Gallery Image 5" class="gallery-img" onclick="openLightbox();currentSlide(5)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/User story.jpeg" alt="Gallery Image 6" class="gallery-img" onclick="openLightbox();currentSlide(6)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/donate.jpeg" alt="Gallery Image 7" class="gallery-img" onclick="openLightbox();currentSlide(7)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/Founder.jpeg" alt="Gallery Image 8" class="gallery-img" onclick="openLightbox();currentSlide(8)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/User story (2).jpeg" alt="Gallery Image 9" class="gallery-img" onclick="openLightbox();currentSlide(9)" />
+        </div>
+        <div class="gallery-item">
+            <img src="/Images/donation.jpeg" alt="Gallery Image 10" class="gallery-img" onclick="openLightbox();currentSlide(10)" />
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img class="lightbox-slide" id="lightbox-slide">
+        </div>
+    </div>
+</section>
+
+<script>
+    // Open the lightbox
+    function openLightbox() {
+        document.getElementById("lightbox-modal").style.display = "flex";
+    }
+
+    // Close the lightbox
+    function closeLightbox() {
+        document.getElementById("lightbox-modal").style.display = "none";
+    }
+
+    // Change slide in the lightbox
+    function currentSlide(n) {
+        let slides = document.getElementsByClassName("gallery-img");
+        let lightboxSlide = document.getElementById("lightbox-slide");
+        lightboxSlide.src = slides[n - 1].src;
+    }
+
+ </script>
+
+@*=============================== Footer ================================*@
+<footer class="footer bg-dark text-white pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5>About Materfamilia</h5>
+                <p>Materfamilia is dedicated to supporting and empowering families through tailored services, education, and outreach programs.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About" class="text-white text-decoration-none">About Us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ContactUs" class="text-white text-decoration-none">Contact Us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Gallery" class="text-white text-decoration-none">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                    <div class="social-item">
+                        <a href="https://m.facebook.com/integrityqueen/" target="_blank" class="social-link">
+                            <lord-icon src="https://cdn.lordicon.com/dqxvvqzi.json"
+                                       trigger="hover"
+                                       colors="primary:#1b74e4,secondary:#f4f4f4"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">Facebook</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://x.com/IntegriteGRC" target="_blank" class="social-link">
+                            <lord-icon src="https://cdn.lordicon.com/bjdrneur.json"
+                                       trigger="hover"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">Twitter</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://www.instagram.com/integritegrc/?hl=en" target="_blank" class="social-link">
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/ctlpkznr.json"
+                                       trigger="hover"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">Instagram</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://za.linkedin.com/in/annligman" target="_blank" class="social-link">
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/nwqudhei.json"
+                                       trigger="hover"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">LinkedIn</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://whatsapp.com/channel/0029VajysNX0Qeabv9ChVk0G" target="_blank" class="social-link">
+                            <lord-icon src="https://cdn.lordicon.com/zpxybbhl.json"
+                                       trigger="hover"
+                                       colors="primary:#25d366,secondary:#f4f4f4"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">WhatsApp</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center mt-4">
+                        <p>&copy; 2024 Materfamilia. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+</footer>

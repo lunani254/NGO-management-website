@@ -1,0 +1,59 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+  
+        <div class="login-body">
+            <div class="login-container">
+
+            
+                <h2>@ViewData["Title"]</h2>
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <h4>Create a new account</h4>
+                    <hr />
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="name@example.com" aria-required="true" />
+                        <label asp-for="Input.Email">Email</label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Password" class="form-control" autocomplete="new-password" placeholder="password" aria-required="true" />
+                        <label asp-for="Input.Password">Password</label>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" placeholder="password" aria-required="true" />
+                        <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    
+                    @* Input Role Section [Uncomment if you wish to register users with other roles] *@
+                    <div class="form-floating mb-3">
+                        <select asp-for="Input.Role" class="form-control" autocomplete="role" aria-required="true" placeholder="Role">
+                            <option value="Admin">Admin</option> 
+                            <option value="Client">Client</option>
+                            <option value="Employee">Employee</option> 
+                        </select>
+                        <label asp-for="Input.Role">Select Role</label>
+                        <span asp-validation-for="Input.Role" class="text-danger"></span>
+
+                        <!-- Hidden field for Role [Allows for Web User to register only as Client] -->
+                        @* <input asp-for="Input.Role" type="hidden" value="Client" /> *@
+
+                    </div>
+
+                    <button id="registerSubmit" type="submit" class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

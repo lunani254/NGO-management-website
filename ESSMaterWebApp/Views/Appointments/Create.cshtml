@@ -1,0 +1,177 @@
+﻿@model ESSMaterWebApp.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create Appointment";
+}
+
+<h1 class="page-title">Book Appointment</h1>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <form asp-action="Create" class="appointment-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Service Type -->
+            <div class="form-group">
+                <label asp-for="ServiceType" class="control-label">Service Type</label>
+                <select asp-for="ServiceType" class="form-control">
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="Mentoring">Mentoring</option>
+                    <option value="Coaching">Coaching</option>
+                    <option value="Advisory">Advisory Service</option>
+                    <option value="Consultation">Consultation</option>
+                </select>
+                <span asp-validation-for="ServiceType" class="text-danger"></span>
+            </div>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <!-- Surname -->
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label">Surname</label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label">Email Address</label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <!-- Country -->
+            <div class="form-group">
+                <label asp-for="Country" class="control-label">Country</label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+
+            <!-- Province -->
+            <div class="form-group">
+                <label asp-for="Province" class="control-label">Province</label>
+                <input asp-for="Province" class="form-control" />
+                <span asp-validation-for="Province" class="text-danger"></span>
+            </div>
+
+            <!-- City -->
+            <div class="form-group">
+                <label asp-for="City" class="control-label">City</label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+
+            <!-- Suburb -->
+            <div class="form-group">
+                <label asp-for="Suburb" class="control-label">Suburb</label>
+                <input asp-for="Suburb" class="form-control" />
+                <span asp-validation-for="Suburb" class="text-danger"></span>
+            </div>
+
+            <!-- Appointment Date -->
+            <div class="form-group">
+                <label asp-for="AppointmentDate" class="control-label">Appointment Date</label>
+                <input asp-for="AppointmentDate" type="datetime-local" class="form-control" />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Create Appointment" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="go-back-link">
+        <a class="btn btn-secondary" asp-action="Index">Go Back</a>
+    </div>
+}
+
+@section Styles {
+    <style>
+        /* General Page Styling */
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form Container */
+        .appointment-form {
+            background: linear-gradient(135deg, #ff7f50, #ffcc00); /* Orange to Yellow Gradient */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+            /* Input Fields */
+            .appointment-form .form-control {
+                background-color: rgba(255, 255, 255, 0.2);
+                border: 1px solid #fff;
+                color: #fff;
+                padding: 10px;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+                .appointment-form .form-control:focus {
+                    background-color: rgba(255, 255, 255, 0.3);
+                    border-color: #ffcc00;
+                    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+                }
+
+            /* Form Labels */
+            .appointment-form label {
+                font-size: 1rem;
+                color: #fff;
+                font-weight: bold;
+            }
+
+            /* Submit Button */
+            .appointment-form .btn-primary {
+                background-color: #ffcc00;
+                border: none;
+                color: #fff;
+                padding: 12px 20px;
+                font-size: 1.1rem;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+            }
+
+                .appointment-form .btn-primary:hover {
+                    background-color: #ff7f50;
+                    transform: scale(1.05);
+                }
+
+        /* Back Link Button */
+        .go-back-link .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+            .go-back-link .btn-secondary:hover {
+                background-color: #5a6268;
+            }
+    </style>
+}

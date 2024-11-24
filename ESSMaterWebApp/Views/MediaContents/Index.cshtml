@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ESSMaterWebApp.Models.MediaContent>
+
+@{
+    ViewData["Title"] = "Media Content";
+}
+
+<h1 class="page-title">Manage Media</h1>
+
+<p class="create-new-link">
+    <a class="btn btn-primary" asp-action="Create">Save Media URL</a>
+</p>
+
+@if (!Model.Any())
+{
+    <p class="text-center">No media content available. Click <a asp-action="Create">here</a> to add new content.</p>
+}
+else
+{
+    <div class="media-content-container">
+        @foreach (var item in Model)
+        {
+            <div class="media-card">
+                <h3 class="media-title">@item.MediaTitle</h3>
+                <p class="media-description">@item.Description</p>
+                <p class="media-type"><strong>Type:</strong> @item.Type</p>
+                <p class="media-url"><strong>URL:</strong> <a href="@item.Url" target="_blank">@item.Url</a></p>
+
+                <div class="media-actions">
+                    <a class="btn btn-secondary btn-sm" asp-action="Edit" asp-route-id="@item.MediaId" title="Edit Media Content">Edit</a>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.MediaId" title="View Media Details">Details</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.MediaId" title="Delete Media Content">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+}

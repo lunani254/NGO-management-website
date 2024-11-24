@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewData["Title"] = "ComingSoon";
+}
+
+<div class="coming-soon-container">
+    <h1 class="coming-soon-title">Coming Soon</h1>
+    <p class="coming-soon-description">This feature is under development and will be available soon. Stay tuned!</p>
+    <a href="/" class="btn btn-primary">Back to Home</a>
+</div>
+
+@*=============================== Footer ================================*@
+<footer class="footer bg-dark text-white pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5>About Materfamilia</h5>
+                <p>Materfamilia is dedicated to supporting and empowering families through tailored services, education, and outreach programs.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About" class="text-white text-decoration-none">About Us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="ContactUs" class="text-white text-decoration-none">Contact Us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Gallery" class="text-white text-decoration-none">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                    <div class="social-item">
+                        <a href="https://m.facebook.com/integrityqueen/" target="_blank" class="social-link">
+                            <lord-icon src="https://cdn.lordicon.com/dqxvvqzi.json"
+                                       trigger="hover"
+                                       colors="primary:#1b74e4,secondary:#f4f4f4"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">Facebook</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://x.com/IntegriteGRC" target="_blank" class="social-link">
+                            <lord-icon src="https://cdn.lordicon.com/bjdrneur.json"
+                                       trigger="hover"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">Twitter</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://www.instagram.com/integritegrc/?hl=en" target="_blank" class="social-link">
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/ctlpkznr.json"
+                                       trigger="hover"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">Instagram</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://za.linkedin.com/in/annligman" target="_blank" class="social-link">
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/nwqudhei.json"
+                                       trigger="hover"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">LinkedIn</p>
+                        </a>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://whatsapp.com/channel/0029VajysNX0Qeabv9ChVk0G" target="_blank" class="social-link">
+                            <lord-icon src="https://cdn.lordicon.com/zpxybbhl.json"
+                                       trigger="hover"
+                                       colors="primary:#25d366,secondary:#f4f4f4"
+                                       style="width:50px;height:50px">
+                            </lord-icon>
+                            <p class="social-name">WhatsApp</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center mt-4">
+                        <p>&copy; 2024 Materfamilia. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+</footer>
+
+@section Styles {
+    <style>
+        .coming-soon-container {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #ff7f50, #ffcc00);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            margin: 50px auto;
+            max-width: 600px;
+        }
+
+        .coming-soon-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .coming-soon-description {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .btn-primary {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #ff7f50;
+                transform: scale(1.05);
+            }
+    </style>
+}
