@@ -1,39 +1,79 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ESSMaterWebApp.Models;
 
 public partial class MaterDBContext : IdentityDbContext
 {
+    //---------------------------------------------------------------------//
+    /// <summary>
+    /// Default constructor.
+    /// </summary>
     public MaterDBContext()
     {
+
     }
 
+    //---------------------------------------------------------------------//
+    /// <summary>
+    /// Constructor with options.
+    /// </summary>
+    /// <param name="options"></param>
     public MaterDBContext(DbContextOptions<MaterDBContext> options)
         : base(options)
     {
+
     }
 
+    /// <summary>
+    /// Appointments table.
+    /// </summary>
     public virtual DbSet<Appointment> Appointments { get; set; }
 
-    
+    /// <summary>
+    /// Diagnoses table.
+    /// </summary>
     public virtual DbSet<Diagnosis> Diagnoses { get; set; }
 
+    /// <summary>
+    /// DonationInterests table.
+    /// </summary>
     public virtual DbSet<DonationInterest> DonationInterests { get; set; }
 
+    /// <summary>
+    /// Employees table.
+    /// </summary>
     public virtual DbSet<Employee> Employees { get; set; }
 
+    /// <summary>
+    /// MediaContents table.
+    /// </summary>
     public virtual DbSet<MediaContent> MediaContents { get; set; }
 
+    /// <summary>
+    /// Questions table.
+    /// </summary>
     public virtual DbSet<Question> Questions { get; set; }
 
+    /// <summary>
+    /// Questionnaires table.
+    /// </summary>
     public virtual DbSet<Questionnaire> Questionnaires { get; set; }
 
+    /// <summary>
+    /// Responses table.
+    /// </summary>
     public virtual DbSet<Response> Responses { get; set; }
 
-   
+    //---------------------------------------------------------------------//
+    /// <summary>
+    /// OnModelCreating method.
+    /// NOTE: This method is used to configure the database schema.
+    /// (Not really sure if this peace of code should still be here or not,
+    /// from what I could understand this was only used when the database was 
+    /// being created or something of that nature, [Ask Victor for clarifivation])
+    /// </summary>
+    /// <param name="modelBuilder"></param>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -106,5 +146,10 @@ public partial class MaterDBContext : IdentityDbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
+    /// <summary>
+    /// OnModelCreatingPartial method.
+    /// </summary>
+    /// <param name="modelBuilder"></param>
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
+//**------------------------------------------------------------< END >------------------------------------------------------------**// 

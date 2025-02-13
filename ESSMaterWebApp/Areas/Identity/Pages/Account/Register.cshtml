@@ -5,11 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-  
         <div class="login-body">
             <div class="login-container">
-
-            
+         
                 <h2>@ViewData["Title"]</h2>
                 <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                     <h4>Create a new account</h4>
@@ -34,9 +32,9 @@
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                     </div>
                     
-                    @* Input Role Section [Uncomment if you wish to register users with other roles] *@
+                    Input Role Section [Uncomment if you wish to register users with other roles]
                     <div class="form-floating mb-3">
-                        <select asp-for="Input.Role" class="form-control" autocomplete="role" aria-required="true" placeholder="Role">
+                         <select asp-for="Input.Role" class="form-control" autocomplete="role" aria-required="true" placeholder="Role">
                             <option value="Admin">Admin</option> 
                             <option value="Client">Client</option>
                             <option value="Employee">Employee</option> 
@@ -45,8 +43,7 @@
                         <span asp-validation-for="Input.Role" class="text-danger"></span>
 
                         <!-- Hidden field for Role [Allows for Web User to register only as Client] -->
-                        @* <input asp-for="Input.Role" type="hidden" value="Client" /> *@
-
+                        <input asp-for="Input.Role" type="hidden" value="Client" /> 
                     </div>
 
                     <button id="registerSubmit" type="submit" class="btn">Register</button>

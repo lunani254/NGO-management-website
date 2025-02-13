@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ESSMaterWebApp.Models;
 
@@ -11,20 +6,39 @@ namespace ESSMaterWebApp.Controllers
 {
     public class AppointmentsController : Controller
     {
+        /// <summary>
+        /// Database context.
+        /// </summary>
         private readonly MaterDBContext _context;
 
+        //---------------------------------------------------------------------//
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        /// <param name="context"></param>
         public AppointmentsController(MaterDBContext context)
         {
             _context = context;
         }
 
+        //---------------------------------------------------------------------//
         // GET: Appointments
+        /// <summary>
+        /// Get all appointments.
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.Appointments.ToListAsync());
         }
 
+        //---------------------------------------------------------------------//
         // GET: Appointments/Details/5
+        /// <summary>
+        /// Get details of an appointment.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,15 +56,26 @@ namespace ESSMaterWebApp.Controllers
             return View(appointment);
         }
 
+        //---------------------------------------------------------------------//
         // GET: Appointments/Create
+        /// <summary>
+        /// Create a new appointment.
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create()
         {
             return View();
         }
 
+        //---------------------------------------------------------------------//
         // POST: Appointments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Save a new appointment.
+        /// </summary>
+        /// <param name="appointment"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AppointmentId,ServiceType,FirstName,Surname,EmailAddress,PhoneNumber,Country,Province,City,Suburb,SubmissionDate,AppointmentDate")] Appointment appointment)
@@ -84,7 +109,13 @@ namespace ESSMaterWebApp.Controllers
             return View(appointment);
         }
 
+        //---------------------------------------------------------------------//
         // GET: Appointments/Edit/5
+        /// <summary>
+        /// Edit an appointment.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -100,9 +131,16 @@ namespace ESSMaterWebApp.Controllers
             return View(appointment);
         }
 
+        //---------------------------------------------------------------------//
         // POST: Appointments/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Save changes to an appointment.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="appointment"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AppointmentId,ServiceType,FirstName,Surname,EmailAddress,PhoneNumber,Country,Province,City,Suburb,SubmissionDate,AppointmentDate")] Appointment appointment)
@@ -135,7 +173,13 @@ namespace ESSMaterWebApp.Controllers
             return View(appointment);
         }
 
+        //---------------------------------------------------------------------//
         // GET: Appointments/Delete/5
+        /// <summary>
+        /// Delete an appointment.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -153,7 +197,13 @@ namespace ESSMaterWebApp.Controllers
             return View(appointment);
         }
 
+        //---------------------------------------------------------------------//
         // POST: Appointments/Delete/5
+        /// <summary>
+        /// Delete Confirmed for an appointment.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -168,9 +218,16 @@ namespace ESSMaterWebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //---------------------------------------------------------------------//
+        /// <summary>
+        /// Check if an appointment exists.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool AppointmentExists(int id)
         {
             return _context.Appointments.Any(e => e.AppointmentId == id);
         }
     }
 }
+//**------------------------------------------------------------< END >------------------------------------------------------------**// 
